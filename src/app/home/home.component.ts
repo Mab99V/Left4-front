@@ -35,7 +35,8 @@ export class HomeComponent implements OnInit {
   
   itemCount: number;
   btntxt: string ="Añadir un infectado";
-  goalText: string ="infectados"; 
+  goalInfe: string = " Infectados "; 
+  goalHabi: string = " Infectados ";
   goals=[];
   constructor(private _data: DataService) { }
 
@@ -54,19 +55,20 @@ export class HomeComponent implements OnInit {
     });
   } 
 
-//cambiado 58-62
-  AgregarMeta(){
+//Se modifica el metodo y se agrega campos modificados
+  AgregarInfectados(){
 
     var payload = {
-      nombre: "Boomer",
-      habilidad: "vomito de Billis"
+      nombre: this.goalInfe,
+      habilidad: this.goalHabi
     }
+    console.log(payload);
 
     this._data.newGoal(payload)
     .subscribe((data: any) => {
    
       this.goals.push(payload);
-      this.goalText='';
+      this.goalInfe='';
       this.itemCount=this.goals.length;
       this._data.changeGoal(this.goals);
 

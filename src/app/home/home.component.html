@@ -19,10 +19,11 @@
      
       <p class="sm">Lo mejor del mundo left4dead </p>
       <form>
-        <input type="text" class="txt" name="item" placeholder="Life goal..." [(ngModel)]= "goalText">
-        <br> <span>{{goalText}}</span>
+        <input type="text" class="txt" name="item" placeholder= " nombre infectado..." [(ngModel)]= "goalInfe">
+        <input type="text" class="txt" name="item" placeholder= " habilidad especial..." [(ngModel)]= "goalHabi">
+        <!-- <br> <span>{{goalInfec}}</span> -->
         
-        <input type="submit" class ="btn" value="{{ btntxt }}" (click)="AgregarMeta()">
+        <input type="submit" class ="btn" value="{{ btntxt }}" (click)="AgregarInfectados()">
       </form>
     </div>
    
